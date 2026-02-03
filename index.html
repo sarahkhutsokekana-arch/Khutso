@@ -1,0 +1,474 @@
+`html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elegant Cuts Hair Salon - Where Style Meets Beauty</title>
+<style>
+/ Reset and Global Styles /
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font-family: 'Arial', sans-serif;
+line-height: 1.6;
+color: #333;
+background-color: #f9f9f9;
+}
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+/ Header /
+header {
+background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+color: white;
+padding: 1rem 0;
+position: fixed;
+width: 100%;
+top: 0;
+z-index: 1000;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.logo {
+font-size: 2rem;
+font-weight: bold;
+}
+.nav-links {
+display: flex;
+list-style: none;
+gap: 2rem;
+}
+.nav-links a {
+color: white;
+text-decoration: none;
+font-weight: bold;
+transition: color 0.3s;
+}
+.nav-links a:hover {
+color: #333;
+}
+.hamburger {
+display: none;
+flex-direction: column;
+cursor: pointer;
+}
+.hamburger span {
+width: 25px;
+height: 3px;
+background: white;
+margin: 3px 0;
+transition: 0.3s;
+}
+
+/ Hero Section /
+.hero {
+background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1578632357504-384a129ad8b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover;
+height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+color: white;
+margin-top: 80px; / Account for fixed header /
+}
+.hero h1 {
+font-size: 4rem;
+margin-bottom: 1rem;
+}
+.hero p {
+font-size: 1.5rem;
+margin-bottom: 2rem;
+}
+.btn {
+display: inline-block;
+background: #ff6b6b;
+color: white;
+padding: 1rem 2rem;
+text-decoration: none;
+border-radius: 50px;
+font-weight: bold;
+transition: transform 0.3s, box-shadow 0.3s;
+}
+.btn:hover {
+transform: translateY(-3px);
+box-shadow: 0 10px 20px rgba(255,107,107,0.4);
+}
+
+/ Sections /
+section {
+padding: 5rem 0;
+}
+h2 {
+text-align: center;
+font-size: 3rem;
+margin-bottom: 3rem;
+color: #ff6b6b;
+}
+
+/ Services /
+.services-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 2rem;
+}
+.service-card {
+background: white;
+padding: 2rem;
+border-radius: 20px;
+text-align: center;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+transition: transform 0.3s;
+}
+.service-card:hover {
+transform: translateY(-10px);
+}
+.service-card h3 {
+font-size: 1.5rem;
+margin-bottom: 1rem;
+color: #333;
+}
+.price {
+font-size: 1.2rem;
+color: #ff6b6b;
+font-weight: bold;
+}
+
+/ About /
+.about {
+background: #f4f4f4;
+}
+.about-content {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 3rem;
+align-items: center;
+}
+.about-text p {
+font-size: 1.2rem;
+margin-bottom: 1.5rem;
+}
+
+/ Gallery /
+.gallery-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 1rem;
+}
+.gallery-item {
+height: 250px;
+background-size: cover;
+background-position: center;
+border-radius: 15px;
+transition: transform 0.3s;
+}
+.gallery-item:hover {
+transform: scale(1.05);
+}
+
+/ Contact /
+.contact-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 3rem;
+}
+form {
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
+input, textarea {
+padding: 1rem;
+border: 1px solid #ddd;
+border-radius: 10px;
+font-size: 1rem;
+}
+.contact-info h3 {
+margin-bottom: 1rem;
+color: #ff6b6b;
+}
+
+/ Footer /
+footer {
+background: #333;
+color: white;
+text-align: center;
+padding: 2rem 0;
+}
+
+/ Responsive Design /
+@media (max-width: 768px) {
+.hamburger {
+display: flex;
+}
+.nav-links {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+width: 100%;
+background: #ff6b6b;
+flex-direction: column;
+padding: 1rem;
+}
+.nav-links.active {
+display: flex;
+}
+.hero h1 {
+font-size: 2.5rem;
+}
+.about-content,
+.contact-grid {
+grid-template-columns: 1fr;
+}
+}
+</style>
+</head>
+<body>
+<!-- Header -->
+<header>
+<nav class="container">
+<div class="logo">Elegant Cuts</div>
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<div class="hamburger" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</nav>
+</header>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+<div>
+<h1>Welcome to Elegant Cuts</h1>
+<p>Transform your look with our expert stylists. Book now!</p>
+<a href="#contact" class="btn">Book Appointment</a>
+</div>
+</section>
+
+<!-- Services -->
+<section id="services" class="container">
+<h2>Our Services</h2>
+<div class="services-grid">
+<div class="service-card">
+<h3>Haircut & Style</h3>
+<p>Precision cuts tailored to your style.</p>
+<div class="price">Misplaced &
+Misplaced &
+80</div>
+</div>
+<div class="service-card">
+<h3>Deep Conditioning</h3>
+<p>Revitalize your hair with luxury treatments.</p>
+<div class="price">
+35
+<
+/
+d
+i
+v
+><
+/
+d
+i
+v
+><
+d
+i
+v
+c
+l
+a
+s
+s
+=
+"
+s
+e
+r
+v
+i
+c
+e
+−
+c
+a
+r
+d
+"
+><
+h
+3
+>
+F
+u
+l
+l
+M
+a
+k
+e
+o
+v
+e
+r
+<
+/
+h
+3
+><
+p
+>
+C
+o
+m
+p
+l
+e
+t
+e
+t
+r
+a
+n
+s
+f
+o
+r
+m
+a
+t
+i
+o
+n
+p
+a
+c
+k
+a
+g
+e
+.
+<
+/
+p
+><
+d
+i
+v
+c
+l
+a
+s
+s
+=
+"
+p
+r
+i
+c
+e
+"
+>
+150</div>
+</div>
+</div>
+</section>
+
+<!-- About -->
+<section id="about" class="about">
+<div class="container">
+<h2>About Us</h2>
+<div class="about-content">
+<div class="about-text">
+<p>With over 10 years of experience, Elegant Cuts is your go-to hair salon for trendy styles and personalized care. Our team of certified stylists uses premium products to ensure every client leaves feeling fabulous.</p>
+<p>We believe in beauty that empowers. Visit us today!</p>
+</div>
+<img src="https://images.unsplash.com/photo-1606890658317-7d11825e59e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Salon Interior" style="width: 100%; border-radius: 20px; height: 400px; object-fit: cover;">
+</div>
+</div>
+</section>
+
+<!-- Gallery -->
+<section id="gallery" class="container">
+<h2>Gallery</h2>
+<div class="gallery-grid">
+<div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+<div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1610992810030-774b36e0a803?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+<div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1625772299848-361b803ffa25?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+<div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+<div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+<div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1603335724042-e9e5f405fc0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+</div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="container">
+<h2>Contact Us</h2>
+<div class="contact-grid">
+<form>
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<input type="tel" placeholder="Phone Number">
+<textarea rows="5" placeholder="Message" required></textarea>
+<button type="submit" class="btn">Send Message</button>
+</form>
+<div class="contact-info">
+<h3>Get in Touch</h3>
+<p><strong>Address:</strong> 123 Beauty Street, City, State 12345</p>
+<p><strong>Phone:</strong> (555) 123-4567</p>
+<p><strong>Email:</strong> info@elegantcuts.com</p>
+<p><strong>Hours:</strong> Mon-Sat 9AM-7PM</p>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<div class="container">
+<p>&copy; 2024 Elegant Cuts Hair Salon. All rights reserved. | Designed with ❤️ for beauty.</p>
+</div>
+</footer>
+
+<script>
+// Mobile Menu Toggle
+function toggleMenu() {
+const navLinks = document.querySelector('.nav-links');
+navLinks.classList.toggle('active');
+}
+
+// Smooth Scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+document.querySelector(this.getAttribute('href')).scrollIntoView({
+behavior: 'smooth'
+});
+});
+});
+
+// Form Submission (Demo - logs to console)
+document.querySelector('form').addEventListener('submit', function(e) {
+e.preventDefault();
+alert('Thank you for your message! We\'ll get back to you soon.');
+});
+</script>
+</body>
+</html>
