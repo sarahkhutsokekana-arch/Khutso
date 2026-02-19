@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eve's Nails and Beauty Salon - Services</title>
+<style>
+/* Reset and Global Styles */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font-family: 'Arial', sans-serif;
+line-height: 1.6;
+color: #333;
+background-color: #f9f9f9;
+}
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+/* Header */
+header {
+background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+color: white;
+padding: 1rem 0;
+position: fixed;
+width: 100%;
+top: 0;
+z-index: 1000;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.logo {
+font-size: 2rem;
+font-weight: bold;
+}
+.nav-links {
+display: flex;
+list-style: none;
+gap: 2rem;
+}
+.nav-links a {
+color: white;
+text-decoration: none;
+font-weight: bold;
+transition: color 0.3s;
+}
+.nav-links a:hover {
+color: #333;
+}
+.hamburger {
+display: none;
+flex-direction: column;
+cursor: pointer;
+}
+.hamburger span {
+width: 25px;
+height: 3px;
+background: white;
+margin: 3px 0;
+transition: 0.3s;
+}
+/* Sections */
+section {
+padding: 5rem 0;
+animation: fadeIn 1s ease-out;
+margin-top: 80px; /* Account for fixed header */
+}
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+h2 {
+text-align: center;
+font-size: 3rem;
+margin-bottom: 3rem;
+color: #ff6b6b;
+}
+/* Services */
+.services-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 2rem;
+}
+.service-card {
+background: white;
+padding: 2rem;
+border-radius: 20px;
+text-align: center;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+transition: transform 0.3s;
+animation: cardPop 0.5s ease-out;
+}
+@keyframes cardPop {
+from { transform: scale(0.95); opacity: 0.8; }
+to { transform: scale(1); opacity: 1; }
+}
+.service-card:hover {
+transform: translateY(-10px);
+}
+.service-card img {
+width: 100%;
+height: 200px;
+object-fit: cover;
+border-radius: 10px;
+margin-bottom: 1rem;
+}
+.service-card h3 {
+font-size: 1.5rem;
+margin-bottom: 1rem;
+color: #333;
+}
+.price {
+font-size: 1.2rem;
+color: #ff6b6b;
+font-weight: bold;
+}
+/* Footer */
+footer {
+background: #333;
+color: white;
+text-align: center;
+padding: 2rem 0;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+.hamburger {
+display: flex;
+}
+.nav-links {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+width: 100%;
+background: #ff6b6b;
+flex-direction: column;
+padding: 1rem;
+}
+.nav-links.active {
+display: flex;
+}
+}
+</style>
+</head>
+<body>
+<!-- Header -->
+<header>
+<nav class="container">
+<div class="logo">Eve's Nails and Beauty</div>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="#">Services</a></li>
+<li><a href="index.html#about">About</a></li>
+<li><a href="index.html#gallery">Gallery</a></li>
+<li><a href="index.html#contact">Contact</a></li>
+</ul>
+<div class="hamburger" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</nav>
+</header>
+<!-- Services -->
+<section id="services" class="container">
+<h2>Our Services</h2>
+<div class="services-grid">
+<div class="service-card">
+<img src="https://i.ytimg.com/vi/eSNqVWvVEsk/maxresdefault.jpg" alt="African woman with stylish haircut">
+<h3>Women's Haircut & Style</h3>
+<p>Precision cuts tailored to your style.</p>
+<div class="price">R1280</div>
+</div>
+<div class="service-card">
+<img src="https://djn2oq6v2lacp.cloudfront.net/wp-content/uploads/2023/01/0-Best-Haircuts-For-Black-Men.jpg" alt="African man with modern haircut">
+<h3>Men's Haircut</h3>
+<p>Sharp and modern cuts for men.</p>
+<div class="price">R800</div>
+</div>
+<div class="service-card">
+<img src="https://images.ctfassets.net/2ad6lzhcf1hi/5zs9HH7bec9OB8BCOVWabr/5f739867f5b37aa2c7286b6aa11fbf58/Hero_Black_Women_Pioneered_Nail_Art.jpeg" alt="African woman manicure nails">
+<h3>Manicure</h3>
+<p>Luxury nail care and designs.</p>
+<div class="price">R480</div>
+</div>
+<div class="service-card">
+<img src="https://www.shutterstock.com/shutterstock/photos/184194839/display_1500/stock-photo-african-female-feet-and-hand-blue-pedicure-with-pink-flower-184194839.jpg" alt="African woman pedicure">
+<h3>Pedicure</h3>
+<p>Relaxing foot treatments and polish.</p>
+<div class="price">R640</div>
+</div>
+<div class="service-card">
+<img src="https://i.ytimg.com/vi/BHFKMREQ9Ro/maxresdefault.jpg" alt="African person hair deep conditioning treatment">
+<h3>Deep Conditioning</h3>
+<p>Revitalize your hair with luxury treatments.</p>
+<div class="price">R560</div>
+</div>
+<div class="service-card">
+<img src="https://hips.hearstapps.com/hmg-prod/images/lead4-1496436521.png?crop=0.708xw:1.00xh;0.208xw,0&resize=768:*" alt="African person full beauty makeover">
+<h3>Full Makeover</h3>
+<p>Complete transformation package including hair and nails.</p>
+<div class="price">R2400</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer>
+<div class="container">
+<p>&copy; 2024 Eve's Nails and Beauty Salon. All rights reserved. | Designed with ❤️ for beauty.</p>
+</div>
+</footer>
+<script>
+// Mobile Menu Toggle
+function toggleMenu() {
+const navLinks = document.querySelector('.nav-links');
+navLinks.classList.toggle('active');
+}
+</script>
+</body>
+</html>
