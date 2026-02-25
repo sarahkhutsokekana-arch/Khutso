@@ -8,22 +8,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary: #c2185b; 
-            --accent: #d4af37;  
+            --primary: #c2185b;
+            --accent: #d4af37;
             --dark: #1a1a1a;
             --glass: rgba(255, 255, 255, 0.9);
             --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #fffafb;
             color: var(--dark);
             overflow-x: hidden;
         }
-
         /* --- Header --- */
         header {
             background: var(--glass);
@@ -35,7 +32,6 @@
             z-index: 1000;
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
-
         nav {
             max-width: 1200px;
             margin: 0 auto;
@@ -44,17 +40,14 @@
             align-items: center;
             padding: 0 20px;
         }
-
         .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--primary); }
-
         .nav-links { display: flex; gap: 2rem; list-style: none; }
         .nav-links a { text-decoration: none; color: var(--dark); font-weight: 500; font-size: 0.9rem; transition: var(--transition); }
         .nav-links a:hover { color: var(--primary); }
-
         /* --- Hero Section --- */
         .hero {
             height: 90vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
                         url('https://images.unsplash.com/photo-1620331311520-246422ff82f9?q=80&w=2070&auto=format&fit=crop') center/cover;
             display: flex;
             align-items: center;
@@ -63,7 +56,6 @@
             color: white;
             padding-top: 80px;
         }
-
         .btn-pear {
             display: inline-block;
             background: var(--primary);
@@ -77,9 +69,7 @@
             border: none;
             cursor: pointer;
         }
-
         .btn-pear:hover { transform: scale(1.05) rotate(-2deg); background: var(--accent); }
-
         /* --- Floating WhatsApp Button --- */
         .whatsapp-float {
             position: fixed;
@@ -99,16 +89,13 @@
             transition: var(--transition);
             text-decoration: none;
         }
-
         .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; }
-
         /* --- Booking & Contact Section --- */
         .booking-section {
             padding: 100px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
-
         .booking-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -118,11 +105,8 @@
             border-radius: 40px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.05);
         }
-
         .booking-form h2 { font-family: 'Playfair Display', serif; margin-bottom: 20px; color: var(--primary); }
-
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-
         input, select, textarea {
             width: 100%;
             padding: 15px;
@@ -133,14 +117,12 @@
             font-family: inherit;
             outline-color: var(--accent);
         }
-
         /* Calendar Styling */
         input[type="date"], input[type="time"] {
             cursor: pointer;
             color: var(--primary);
             font-weight: 600;
         }
-
         /* --- Responsive Design --- */
         @media (max-width: 900px) {
             .booking-container { grid-template-columns: 1fr; }
@@ -151,7 +133,6 @@
     </style>
 </head>
 <body>
-
 <header>
     <nav>
         <div class="logo">EVE'S.</div>
@@ -163,11 +144,9 @@
         <button class="btn-pear" style="padding: 0.6rem 1.5rem; font-size: 0.8rem;">Login</button>
     </nav>
 </header>
-
 <a href="https://wa.me/27821234567" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
 </a>
-
 <section id="home" class="hero">
     <div class="hero-content" style="text-align: center;">
         <h1 style="font-family: 'Playfair Display', serif; font-size: 4rem; margin-bottom: 20px;">Mzansi's Crown Jewel</h1>
@@ -175,13 +154,12 @@
         <a href="#book" class="btn-pear">Secure Your Slot</a>
     </div>
 </section>
-
 <section id="book" class="booking-section">
     <div class="booking-container">
         <div class="booking-form">
             <h2>Book Your Appointment</h2>
             <p style="margin-bottom: 25px; color: #666;">Select your preferred date and time. We will confirm via SMS.</p>
-            
+           
             <form id="appointmentForm">
                 <input type="text" placeholder="Full Name" required>
                 <div class="form-row">
@@ -194,7 +172,7 @@
                         <option>Silk Press</option>
                     </select>
                 </div>
-                
+               
                 <div class="form-row">
                     <div>
                         <label style="font-size: 0.8rem; color: var(--primary); font-weight: bold;">Select Date</label>
@@ -205,17 +183,15 @@
                         <input type="time" id="bookingTime" required>
                     </div>
                 </div>
-
                 <textarea rows="3" placeholder="Special requirements (e.g., hair length, soak off needed?)"></textarea>
-                
+               
                 <button type="submit" class="btn-pear" style="width: 100%; border-radius: 20px 120px 120px 120px;">Confirm Booking Request</button>
             </form>
         </div>
-
         <div class="contact-info" style="background: var(--primary); color: white; padding: 40px; border-radius: 30px;">
             <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 20px;">Visit the Studio</h3>
             <p style="margin-bottom: 20px; opacity: 0.9;">We are located in the heart of Sandton, offering a serene escape from the city hustle.</p>
-            
+           
             <div style="margin-bottom: 15px;">
                 <i class="fas fa-map-marker-alt"></i> 45 Rivonia Road, Sandton, 2196
             </div>
@@ -225,31 +201,82 @@
             <div style="margin-bottom: 40px;">
                 <i class="fas fa-envelope"></i> bookings@evesnails.co.za
             </div>
-
             <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 20px; text-align: center; border: 1px dashed rgba(255,255,255,0.3);">
                 <p style="font-size: 0.9rem;"><strong>Tip:</strong> Saturdays fill up 2 weeks in advance. Book early to avoid disappointment!</p>
             </div>
         </div>
     </div>
 </section>
-
 <footer style="text-align: center; padding: 40px; background: var(--dark); color: white;">
     <p>&copy; 2026 Eve's Nails & Beauty. Designed for Mzansi.</p>
 </footer>
-
 <script>
     // Set minimum date to today so users can't book in the past
     const today = new Date().toISOString().split('T')[0];
     document.getElementById('bookingDate').setAttribute('min', today);
-
-    // Form Submission Logic
-    document.getElementById('appointmentForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const date = document.getElementById('bookingDate').value;
-        const time = document.getElementById('bookingTime').value;
-        alert(`Request Sent! We'll check availability for ${date} at ${time} and get back to you.`);
-    });
 </script>
+<!-- Firebase SDK Integration -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+  import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+  
+  // Your Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyB_39F4dY0DIqXVDFxyxtlxvLH2FSk4bM4",
+    authDomain: "eve-s-beauty-palour.firebaseapp.com",
+    projectId: "eve-s-beauty-palour",
+    storageBucket: "eve-s-beauty-palour.firebasestorage.app",
+    messagingSenderId: "339013443264",
+    appId: "1:339013443264:web:f42ebbb7aa4242a5a55725",
+    measurementId: "G-SQTJV2CTV5"
+  };
 
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // Form handling with Firestore save
+  const form = document.getElementById('appointmentForm');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    // Get form values
+    const fullName    = form.querySelector('input[placeholder="Full Name"]').value.trim();
+    const cellNumber  = form.querySelector('input[placeholder="Cell Number"]').value.trim();
+    const service     = form.querySelector('select').value;
+    const date        = form.querySelector('#bookingDate').value;
+    const time        = form.querySelector('#bookingTime').value;
+    const notes       = form.querySelector('textarea').value.trim();
+
+    if (!fullName || !cellNumber || !service || !date || !time) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+    const bookingData = {
+      fullName,
+      cellNumber,
+      service,
+      date,
+      time,
+      notes,
+      createdAt: serverTimestamp(),          // Auto-add server time
+      status: "pending"                      // You can later update to confirmed/cancelled
+    };
+
+    try {
+      const docRef = await addDoc(collection(db, "appointments"), bookingData);
+      
+      // Success!
+      alert(`Booking request sent successfully! We'll confirm via SMS soon. (Ref: ${docRef.id})`);
+      
+      form.reset(); // Clear the form
+    } catch (error) {
+      console.error("Error saving booking:", error);
+      alert("Sorry, something went wrong. Please try again or WhatsApp us directly.");
+    }
+  });
+</script>
 </body>
 </html>
