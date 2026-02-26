@@ -1,4 +1,4 @@
-\<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -48,7 +48,7 @@
         .hero {
             height: 90vh;
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-                        url('https://images.unsplash.com/photo-1620331311520-246422ff82f9?q=80&w=2070&auto=format&fit=crop') center/cover;
+                        url('https://images.pexels.com/photos/853151/pexels-photo-853151.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -137,8 +137,8 @@
     <nav>
         <div class="logo">EVE'S.</div>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">services</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="services.html">Services</a></li>
             <li><a href="#book">Book Now</a></li>
         </ul>
         <button class="btn-pear" style="padding: 0.6rem 1.5rem; font-size: 0.8rem;">Login</button>
@@ -159,7 +159,7 @@
         <div class="booking-form">
             <h2>Book Your Appointment</h2>
             <p style="margin-bottom: 25px; color: #666;">Select your preferred date and time. We will confirm via SMS.</p>
-           
+          
             <form id="appointmentForm">
                 <input type="text" placeholder="Full Name" required>
                 <div class="form-row">
@@ -172,7 +172,7 @@
                         <option>Silk Press</option>
                     </select>
                 </div>
-               
+              
                 <div class="form-row">
                     <div>
                         <label style="font-size: 0.8rem; color: var(--primary); font-weight: bold;">Select Date</label>
@@ -184,14 +184,14 @@
                     </div>
                 </div>
                 <textarea rows="3" placeholder="Special requirements (e.g., hair length, soak off needed?)"></textarea>
-               
+              
                 <button type="submit" class="btn-pear" style="width: 100%; border-radius: 20px 120px 120px 120px;">Confirm Booking Request</button>
             </form>
         </div>
         <div class="contact-info" style="background: var(--primary); color: white; padding: 40px; border-radius: 30px;">
             <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 20px;">Visit the Studio</h3>
             <p style="margin-bottom: 20px; opacity: 0.9;">We are located in the heart of Sandton, offering a serene escape from the city hustle.</p>
-           
+          
             <div style="margin-bottom: 15px;">
                 <i class="fas fa-map-marker-alt"></i> 45 Rivonia Road, Sandton, 2196
             </div>
@@ -208,7 +208,7 @@
     </div>
 </section>
 <footer style="text-align: center; padding: 40px; background: var(--dark); color: white;">
-    <p>&copy; 2026 Eve's Nails & Beauty. Designed for Mzansi.</p>
+    <p>© 2026 Eve's Nails & Beauty. Designed for Mzansi.</p>
 </footer>
 <script>
     // Set minimum date to today so users can't book in the past
@@ -220,7 +220,7 @@
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
   import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
   import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
-  
+ 
   // Your Firebase config
   const firebaseConfig = {
     apiKey: "AIzaSyB_39F4dY0DIqXVDFxyxtlxvLH2FSk4bM4",
@@ -231,12 +231,10 @@
     appId: "1:339013443264:web:f42ebbb7aa4242a5a55725",
     measurementId: "G-SQTJV2CTV5"
   };
-
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
   const auth = getAuth(app);
-
   // ────────────────────────────────────────────────
   // Auth State Listener (runs on page load and auth changes)
   onAuthStateChanged(auth, (user) => {
@@ -253,7 +251,6 @@
       loginBtn.onclick = () => showLoginModal(); // We'll define this below
     }
   });
-
   // ────────────────────────────────────────────────
   // Login Modal (simple popup for email/password)
   function showLoginModal() {
@@ -268,7 +265,6 @@
     modal.style.borderRadius = '15px';
     modal.style.boxShadow = '0 0 20px rgba(0,0,0,0.2)';
     modal.style.zIndex = '3000';
-
     modal.innerHTML = `
       <h3>Login or Sign Up</h3>
       <input id="email" type="email" placeholder="Email" style="width:100%; margin:10px 0;" required>
@@ -276,14 +272,11 @@
       <button id="emailLoginBtn" class="btn-pear" style="width:100%;">Login with Email</button>
       <button id="googleLoginBtn" class="btn-pear" style="width:100%; margin-top:10px; background:#4285F4;">Login with Google</button>
       <button id="signUpBtn" style="width:100%; margin-top:10px; background:var(--accent); color:white; padding:10px; border-radius:15px;">Sign Up Instead</button>
-      <button id="closeModal" style="position:absolute; top:10px; right:10px; background:none; border:none; font-size:20px;">&times;</button>
+      <button id="closeModal" style="position:absolute; top:10px; right:10px; background:none; border:none; font-size:20px;">×</button>
     `;
-
     document.body.appendChild(modal);
-
     // Close modal
     document.getElementById('closeModal').onclick = () => modal.remove();
-
     // Email Login
     document.getElementById('emailLoginBtn').onclick = () => {
       const email = document.getElementById('email').value;
@@ -295,7 +288,6 @@
         })
         .catch((error) => alert('Login failed: ' + error.message));
     };
-
     // Sign Up
     document.getElementById('signUpBtn').onclick = () => {
       const email = document.getElementById('email').value;
@@ -307,7 +299,6 @@
         })
         .catch((error) => alert('Sign up failed: ' + error.message));
     };
-
     // Google Login
     document.getElementById('googleLoginBtn').onclick = () => {
       const provider = new GoogleAuthProvider();
@@ -319,33 +310,27 @@
         .catch((error) => alert('Google login failed: ' + error.message));
     };
   }
-
   // Form handling with Firestore save
   const form = document.getElementById('appointmentForm');
-
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
-
     const user = auth.currentUser;
     if (!user) {
       alert('Please login to book an appointment.');
       showLoginModal(); // Prompt login
       return;
     }
-
     // Get form values
-    const fullName    = form.querySelector('input[placeholder="Full Name"]').value.trim();
-    const cellNumber  = form.querySelector('input[placeholder="Cell Number"]').value.trim();
-    const service     = form.querySelector('select').value;
-    const date        = form.querySelector('#bookingDate').value;
-    const time        = form.querySelector('#bookingTime').value;
-    const notes       = form.querySelector('textarea').value.trim();
-
+    const fullName = form.querySelector('input[placeholder="Full Name"]').value.trim();
+    const cellNumber = form.querySelector('input[placeholder="Cell Number"]').value.trim();
+    const service = form.querySelector('select').value;
+    const date = form.querySelector('#bookingDate').value;
+    const time = form.querySelector('#bookingTime').value;
+    const notes = form.querySelector('textarea').value.trim();
     if (!fullName || !cellNumber || !service || !date || !time) {
       alert("Please fill in all required fields.");
       return;
     }
-
     const bookingData = {
       fullName,
       cellNumber,
@@ -353,17 +338,16 @@
       date,
       time,
       notes,
-      createdAt: serverTimestamp(),          // Auto-add server time
-      status: "pending",                     // You can later update to confirmed/cancelled
-      userId: user.uid                       // Link to user
+      createdAt: serverTimestamp(), // Auto-add server time
+      status: "pending", // You can later update to confirmed/cancelled
+      userId: user.uid // Link to user
     };
-
     try {
       const docRef = await addDoc(collection(db, "appointments"), bookingData);
-      
+     
       // Success!
       alert(`Booking request sent successfully! We'll confirm via SMS soon. (Ref: ${docRef.id})`);
-      
+     
       form.reset(); // Clear the form
     } catch (error) {
       console.error("Error saving booking:", error);
